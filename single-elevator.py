@@ -10,9 +10,9 @@ drn = []
 stations0 = []
 stations1 = []
 
-n = input("Input the number of people in building: ")
+n = input("Enter the number of people in building: ")
 n = int(n)
-print("Input the position and destination for users:")
+print("Enter the position and destination for users:")
 
 for i in range(n):
     p = int(input("Position of " + str(i+1) +": "))
@@ -42,9 +42,9 @@ for k in range(len(pick)):
 stations0.sort()
 stations1.sort(reverse=True)
 
-print("Stations while going up: ")
+print("Stations while the elevator going up: ")
 print(*stations0, sep=", ")
-print("Stations while going down: ")
+print("Stations while the elevator going down: ")
 print(*stations1, sep=", ")
 
 #================SAMPLE OUTPUT 1================
