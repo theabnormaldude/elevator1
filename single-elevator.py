@@ -6,46 +6,46 @@
 
 pick = []
 drop = []
-drn = []
-stations0 = []
-stations1 = []
+direct = []
+station0 = []
+station1 = []
 
-n = input("Enter the number of people in building: ")
+n = input("Input the number of people in building: ")
 n = int(n)
-print("Enter the position and destination for users:")
+print("Input the position and destination for users:")
 
 for i in range(n):
-    p = int(input("Position of " + str(i+1) +": "))
+    p = int(input("Position of " + str(i+1) + ": "))
     pick.append(p)
     d = int(input("Destination of " + str(i+1) + ": "))
     drop.append(d)
 print("Pickups: ")
-print(*pick, sep=", ")
+print(*pick, sep = ", ")
 print("Drops: ")
-print(*drop, sep=", ")
+print(*drop, sep = ", ")
 
 for j in range(len(pick)):
-    drn.append(0) if pick[j]<drop[j] else drn.append(1)
+    direct.append(0) if pick[j] < drop[j] else direct.append(1)
 print("Directions: ")
-print(*drn, sep=", ")
+print(*direct, sep = ", ")
 
-f = max(pick) if max(pick)>max(drop) else max(drop)
+f = max(pick) if max(pick) > max(drop) else max(drop)
 
 for k in range(len(pick)):
-    if drn[k]==0:
-        stations0.append(pick[k])
-        stations0.append(drop[k])
+    if direct[k]==0:
+        station0.append(pick[k])
+        station0.append(drop[k])
     else:
-        stations1.append(pick[k])
-        stations1.append(drop[k])
+        station1.append(pick[k])
+        station1.append(drop[k])
 
-stations0.sort()
-stations1.sort(reverse=True)
+station0.sort()
+station1.sort(reverse=True)
 
-print("Stations while the elevator going up: ")
-print(*stations0, sep=", ")
-print("Stations while the elevator going down: ")
-print(*stations1, sep=", ")
+print("Stations while going up: ")
+print(*station0, sep = ", ")
+print("Stations while going down: ")
+print(*station1, sep = ", ")
 
 #================SAMPLE OUTPUT 1================
 
